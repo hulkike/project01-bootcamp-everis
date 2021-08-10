@@ -1,0 +1,662 @@
+{
+	"info": {
+		"_postman_id": "430508df-97ce-47c6-bdb4-f32a26abc350",
+		"name": "EVERIS_BANK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CUSTOMER",
+			"item": [
+				{
+					"name": "SAVE-CUSTOMERS-PERSONAL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerIdentityType\": \"DNI\",\n    \"customerIdentityNumber\": \"70055041\",\n    \"customerType\" : \"PERSONAL\",\n    \"name\": \"Fabio\",\n    \"email\": \"fabio@tecsup.edu.pe\",\n    \"phone\": \"945865844\",\n    \"address\": \"Urb.Mariscal Caceres\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "SAVE-CUSTOMERS-ENTERPRISE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerIdentityType\": \"RUC\",\n    \"customerIdentityNumber\": \"2011111111\",\n    \"customerType\" : \"ENTERPRISE\",\n    \"name\" : \"EVERIS PERU SAC\",\n    \"email\": \"gerencia@everis.pe\",\n    \"phone\": \"945865844\",\n    \"address\": \"LIMA\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "GET-CUSTOMERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-CUSTOMERS",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Fabio Augusto\",\n    \"code\": \"70055041\",\n    \"iban\": \"fabmer1869\",\n    \"phone\": \"945865844\",\n    \"surname\": \"merino\",\n    \"address\": \"Urb.Mariscal Caceres Sector II\",\n    \"customerType\": {\n        \"id\": \"610a98c42191082cf0771ce4\",\n        \"name\": \"personal\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/customer/610b46e6c1cd190233a21c78\n"
+					},
+					"response": []
+				},
+				{
+					"name": "GET-CUSTOMER-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customer/http://localhost:8081/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "GET-CUSTOMER-BY-IDENTY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customer/identity/70055041"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CUSTOMER-TYPE",
+			"item": [
+				{
+					"name": "GET-CUSTOMER-TYPE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customertype"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-CATEGORY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"personal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/customer/category"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bill",
+			"item": [
+				{
+					"name": "FIND-ALL-BILL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/bill"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-BILL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountNumber\" : \"019-0002-123456-25\",\n    \"balance\" : 1400.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/bill/save"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-BILL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountNumber\" : \"011-0002-123456-25\",\n    \"balance\" : 50.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/bill/update"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/bill/610fdc4c0996497757585c10"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-ACCOUNT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8082/bill/acc/004-0002-123456-25"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "PASIVOS",
+					"item": [
+						{
+							"name": "CREATE-PRODUCT-CUENTA-AHORRO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \t\"productName\":\"AHORRO\",\n\t\"productType\":\"PASIVO\",\n    \"rules\":{\n        \"customerTypeTarget\": \"PERSONAL\",\n        \"commissionMaintenance\":true,\n        \"maximumLimitMonthlyMovements\": true,\n        \"maximumLimitMonthlyMovementsQuantity\": 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE-PRODUCT-CUENTA-CORRIENTE",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \t\"productName\":\"CUENTA CORRIENTE\",\n    \"productType\":\"PASIVO\",\n    \"rules\":{\n        \"customerTypeTarget\": \"ENTERPRISE\",\n        \"commissionMaintenance\":true,\n        \"maximumLimitMonthlyMovements\": false,\n        \"maximumLimitMonthlyMovementsQuantity\": 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE-PRODUCT-CUENTA-PLAZOFIJO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productName\":\"PLAZO FIJO\",\n    \"productType\":\"PASIVO\",\n    \"rules\":{\n        \"customerTypeTarget\": \"ENTERPRISE\",\n        \"commissionMaintenance\":false,\n        \"maximumLimitMonthlyMovements\": false,\n        \"maximumLimitMonthlyMovementsQuantity\": 1\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ACTIVOS",
+					"item": [
+						{
+							"name": "CREATE-PRODUCT-CREDITO-PERSONAL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productName\":\"CREDITO PERSONAL\",\n    \"productType\":\"ACTIVO\",\n    \"rules\":{\n        \"customerType\": \"ENTERPRISE\",\n        \"commissionMaintenance\":false,\n        \"maximumLimitMonthlyMovements\": false,\n        \"maximumLimitMonthlyMovementsQuantity\": 1,\n        \"maximumLimitCreditPerson\": 1,\n        \"maximumLimitCreditEnterprise\": 0\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE-PRODUCT-CREDITO-TARJETA-CREDITO",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productName\":\"CREDITO PERSONAL\",\n    \"productType\":\"ACTIVO\",\n    \"rules\":{\n        \"customerType\": \"ENTERPRISE\",\n        \"commissionMaintenance\":false,\n        \"maximumLimitMonthlyMovements\": false,\n        \"maximumLimitMonthlyMovementsQuantity\": 1,\n        \"maximumLimitCreditPerson\": 1000,\n        \"maximumLimitCreditEnterprise\": 1000\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE-PRODUCT-CREDITO-EMPRESARIAL",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"productName\":\"CREDITO PERSONAL\",\n    \"productType\":\"ACTIVO\",\n    \"rules\":{\n        \"customerType\": \"ENTERPRISE\",\n        \"commissionMaintenance\":false,\n        \"maximumLimitMonthlyMovements\": false,\n        \"maximumLimitMonthlyMovementsQuantity\": 0,\n        \"maximumLimitCreditPerson\": 0,\n        \"maximumLimitCreditEnterprise\": 10\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:8083/product"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "FIND-ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8083/product"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"610d89ab8fc64321fbe87c26\",\n    \"productName\": \"AHORROxxx\",\n    \"productType\": \"PASIVO\",\n    \"rules\": {\n        \"commissionMaintenance\": false,\n        \"maximumLimitMonthlyMovements\": true,\n        \"maximumLimitMonthlyMovementsQuantity\": 0\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8083/product/610d89ab8fc64321fbe87c26"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-PRODUCT-NAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8083/product/name/AHORRO"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8083/product/610d89ab8fc64321fbe87c26"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RETIRE",
+			"item": [
+				{
+					"name": "CREATE-RETIRE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 100,\n    \"description\": \"ONLY FANS\",\n    \"bill\":{\n        \"accountNumber\": \"192-4113-465846-25\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/retire"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-RETIRE-UPDATE-BILL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 1200,\n    \"description\": \"PAGO UNIVERSIDAD\",\n    \"bill\":{\n        \"accountNumber\": \"018-0002-123456-25\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/retire/create"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-BILL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/retire/acc/017-0002-123456-25"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8084/retire"
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE-BILL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"accountNumber\" : \"010-0002-123456-25\",\n    \"balance\" : 2100.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/retire/update/bill"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-TRANSACTION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"transactionAmount\": 10,\n    \"transactionType\":\"retiro\",\n    \"commission\": 0.0,\n    \"bill\":{\n        \"accountNumber\": \"010-0002-123456-25\",\n        \"balance\": 90\n    },\n    \"creditCard\": {},\n    \"description\": \"seguro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8084/retire/create/transaction"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSACTION",
+			"item": [
+				{
+					"name": "CREATE-TRANSACTION",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionAmount\": 10,\n    \"transactionType\":\"retiro\",\n    \"commission\": 0.0,\n    \"bill\":{\n        \"accountNumber\": \"010-0002-123456-25\",\n        \"balance\": 90\n    },\n    \"creditCard\": {},\n    \"description\": \"seguro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8085/transaction/create"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-ACCOUNT-NUMBER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/transaction/acc/004-0002-123456-25"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-ALL-BY-BILL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/transaction/bill/018-0002-123456-25"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-ALL-BY-CREDITCARD",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8085/transaction/creditCard/45577885551"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DEPOSIT",
+			"item": [
+				{
+					"name": "FIND-BY-ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8086/deposit"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-BILL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8086/deposit/acc/018-0002-123456-25"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-DEPOSIT-UPDATE-BILL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": 500,\n    \"description\": \"BONO EVERIS\",\n    \"bill\":{\n        \"accountNumber\": \"018-0002-123456-25\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8086/deposit/create"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACQUISITION",
+			"item": [
+				{
+					"name": "FIND-ALL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8087/acquisition"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-PRODUCT-NAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8087/acquisition/product/AHORRO"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-PRODUCT-ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8087/acquisition/productId/610d62a62d8b4b5047768222"
+					},
+					"response": []
+				},
+				{
+					"name": "FIND-BY-CUSTOMER-IDENITY",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8087/acquisition/customer/70055041"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-ADQ-PLAZOFIJO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"product\": {\n        \"productName\": \"PLAZO FIJO\"\n    },\n    \"customerHolder\": [\n        {\n            \"customerIdentityNumber\" : \"70055041\"\n        }\n    ],\n    \"initial\" : 1500,\n    \"cardNumber\" : \"455277056541\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8087/acquisition/create"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-ADQ-CORRIENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"product\": {\r\n        \"productName\": \"CUENTA CORRIENTE\",\r\n    },\r\n    \"customerHolder\": [\r\n        {\r\n            \"customerIdentityNumber\" : \"70055041\"\r\n        }\r\n    ],\r\n    \"initial\" : 400,\r\n    \"cardNumber\" : \"455277056541\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8087/acquisition/create"
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE-ADQ-AHORRO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n    \"product\": {\n        \"productName\": \"AHORRO\"\n    },\n    \"customerHolder\": [\n        {\n            \"customerIdentityNumber\" : \"70055041\"\n        }\n    ],\n    \"initial\" : 500,\n    \"cardNumber\" : \"455277056541\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8087/acquisition/create"
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
